@@ -36,7 +36,7 @@ To use this repository, follow these steps:
 
 After running the analyzing.py you should get this result:
 
-`
+```
 Each lottery's result is unique in this dataset.
 
 In 460 previous results 48.3% of the numbers are even and 51.7% are odd.
@@ -52,7 +52,7 @@ Simulating Games.
 By simulating 100,000 games, the occurrence of each score required to win prizes is:
 {'11 pts': 8647, '12 pts': 1599, '13 pts': 137, '14 pts': 4, '15 pts': 0}. It indicates
 that the player has approximately 8% of chance to win at least the lowest prize per game.
-`
+```
 
 - Note:
 
