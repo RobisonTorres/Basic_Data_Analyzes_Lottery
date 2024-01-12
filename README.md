@@ -56,4 +56,4 @@ that the player has approximately 8% of chance to win at least the lowest prize 
 
 - Note:
 
-The current result of this analyze will change if more data is put in pre_results.json.
+The current result of this analyze will change if more data are put in pre_results.json.
