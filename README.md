@@ -1,4 +1,4 @@
-# Data Analysis Lottery
+# Data Analyzes Lottery
 
 ## Intro
 
