@@ -2,11 +2,11 @@
 
 ## Intro
 
-The goal of this project is to analyze and get some insights from Lotofácil lottery's previous results.
+The goal of this project is to analyze and get some insights from Lotofácil lottery's previous results. 
 
 ## Features 
 
- - ```analyzing.py``` - This script executes a series of analyzes on all previous results present in pre_results.json file. And simulates 100,000 games to find the occurrence of each score required to win prizes.
+ - ```analyzing.py``` - This script executes a series of analyzes on previous results present in pre_results.json file. And simulates 100,000 games to find the occurrence of each score required to win prizes.
  - ```open_save.py``` - This function opens and loads pre_results.json file, and saves new retrieved results. 
  - ```pre_results.json``` - The file stores all the previous result from the lottery.
  - ```previous_results.py``` - This script retrieves 20 previous results through web scraping and saves new result on pre_results.json file.
@@ -57,3 +57,5 @@ that the player has approximately 8% of chance to win at least the lowest prize 
 - Note:
 
 The current result of this analyze will change if more data are put in pre_results.json.
+
+Lottery outcomes are typically designed to be random, and past results may not predict future outcomes. Therefore, users should approach such analyze with caution and consider them as informational rather than predictive.
