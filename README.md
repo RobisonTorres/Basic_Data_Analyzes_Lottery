@@ -34,7 +34,7 @@ To use this repository, follow these steps:
 
 ## Example
 
-After running the analyzing.py you should get this result:
+After running the analyzing.py on all previous results you should get this outcome:
 
 ```
 Each lottery's result is unique in this dataset.
