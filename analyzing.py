@@ -1,19 +1,30 @@
 import open_save
 import random
+print("Analyzing Previous Results.\n")
+
+def sample_data():
+
+    # This function determines the sample's size.
+    total_rounds = len(open_save.open_file().values())
+    rounds = input(f'Currently there are {total_rounds} previous rounds in the database. \n'
+                   f'Type in the numbers of rounds to be analyzed or press enter to check all of them: ')
+    return total_rounds if rounds == '' else int(rounds)
+
+num = sample_data()
 
 def organize_data():
      
      # This function organizes the data to analyze.
     lottery_results = open_save.open_file().values()
     results = ''.join(lottery_results).replace('-', '') 
-    numbers = [int(results[x: x+2]) for x in range(0, len(results), 2)]
+    numbers = [int(results[x: x+2]) for x in range(0, len(results), 2)][-num * 15:]
     return numbers
 
 def check_duplicate():
 
     # This function checks the data for repeated results.
     lottery_results = open_save.open_file()
-    values = list(lottery_results.values())
+    values = list(lottery_results.values())[-num:]
     count = [v for v in values if values.count(v) >= 2]
     repeat_keys = [k for k in lottery_results.keys() if lottery_results[k] in count]
 
@@ -83,21 +94,24 @@ def repetition():
 
     # This function calculates the frequency of repeated numbers 
     # between current result and previous one, except for the first result.
-    numbers = organize_data()
-    grouped_results = [numbers[x:x+15] for x in range(0, len(numbers), 15)]
-    rep_numbers = [(15 - len(set(grouped_results[x]) - set(grouped_results[x-1])))
-                   for x in range(0, len(grouped_results)) if x != 0]
+    try:
+        numbers = organize_data()
+        grouped_results = [numbers[x:x+15] for x in range(0, len(numbers), 15)]
+        rep_numbers = [(15 - len(set(grouped_results[x]) - set(grouped_results[x-1])))
+                    for x in range(0, len(grouped_results)) if x != 0]
     
-    # Frequency of repeated numbers.
-    fre_result = {}
-    for num in range(6, 16):
-        fre_result[num] = rep_numbers.count(num)
+        # Frequency of repeated numbers.
+        fre_result = {}
+        for num in range(6, 16):
+            fre_result[num] = rep_numbers.count(num)
 
-    # Games that repeated at least 9 numbers from previous result.
-    repeated = sum(list(fre_result.values())[3:])   
-    return f'Out of {len(grouped_results) - 1} games analyzed, '\
-           f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
-           f'of them repeated at least 9 numbers from the previous result.\n'             
+        # Games that repeated at least 9 numbers from previous result.
+        repeated = sum(list(fre_result.values())[3:])   
+        return f'Out of {len(grouped_results) - 1} games analyzed, '\
+               f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
+            f'of them repeated at least 9 numbers from the previous result.\n'             
+    except:
+        return 'The sample must be more than 3 to find games that repeat numbers from previous results.\n'
 
 def simulate_games():
 
@@ -124,8 +138,8 @@ def simulate_games():
         f"{chance_winning}% of chance to win at least the lowest prize per game.\n")
 
 def main():
-   
-    print("Analyzing Previous Results.\n")
+
+    print()
     print(check_duplicate())
     print(even_odd())
     print(frequency())
