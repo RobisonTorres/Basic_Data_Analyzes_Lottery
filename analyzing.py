@@ -33,20 +33,18 @@ def check_duplicate(sample):
 def even_odd(data):
 
     # This function returns the percentage of even and odd numbers.
-    numbers = data
-    count_even = len([n for n in numbers if n % 2 == 0])
-    even_nums = float(f'{(count_even/ len(numbers)*100):.2f}')
-    return f'In {int(len(numbers)/ 15)} previous results '\
+    count_even = len([n for n in data if n % 2 == 0])
+    even_nums = float(f'{(count_even/ len(data)*100):.2f}')
+    return f'In {int(len(data)/ 15)} previous results '\
            f'{even_nums}% of the numbers are even and {100 - even_nums}% are odd.'
 
 def frequency(data):
     
     # This function gets the frequency of each number and shows 
     # the five numbers most and least drawn.    
-    result_numbers = data
     fre_nums = {}
     for num in range(1, 26):
-        fre_nums[num] = result_numbers.count(num)
+        fre_nums[num] = data.count(num)
     
     # Numbers most an least drawn.
     fre_num_sorted = sorted(fre_nums.items(),key=lambda x:x[1])[::-1]
@@ -58,10 +56,9 @@ def frequency_range(data):
     
     # This function groups the numbers in 5 different
     # ranges and shows the most and least drawn.
-    result_numbers = data
     fre_ranges = {}
     for x in range(1, 26, 5):
-        count_numbers = str(len([n for n in result_numbers if n in range(x, x + 5)]))
+        count_numbers = str(len([n for n in data if n in range(x, x + 5)]))
         fre_ranges[f'{x}-{x + 4}'] = count_numbers
     
     # Ranges most an least drawn.
@@ -73,8 +70,7 @@ def frequency_range(data):
 def get_sequence(data):
 
     # This function returns the games with more and less numbers in sequence.
-    numbers = data
-    g_results = [sorted(numbers[x:x+15]) for x in range(0, len(numbers), 15)]
+    g_results = [sorted(data[x:x+15]) for x in range(0, len(data), 15)]
     sequence = []
     for x in range(0, len(g_results)):
         seq = [0]
@@ -91,9 +87,7 @@ def repetition(data):
 
     # This function calculates the frequency of repeated numbers 
     # between current result and previous one, except for the first result.
-    numbers = data
-    grouped_results = [numbers[x:x+15] for x in range(0, len(numbers), 15)]
-
+    grouped_results = [data[x:x+15] for x in range(0, len(data), 15)]
     if len(grouped_results) <= 2:
         return 'The sample must be more than 2 to find games that repeat numbers from previous results.\n'
     else:
