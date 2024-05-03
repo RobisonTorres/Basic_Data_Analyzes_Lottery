@@ -1,11 +1,11 @@
 import requests, bs4, re
 import open_save
 
-# Not working.
+# Not working anymore because they've changed the site's structure.
 def web_search(round):
 
     # This function accesses the lottery's page and takes the html.
-    url = f'https://www.intersena.com.br/lotofacil/resultados/{round}'
+    url = f'https://www.intersena.com.br/lotofacil/resultados/{round}'  # Site's changed.
     source = requests.get(url).text
     soup = bs4.BeautifulSoup(source, 'html.parser')
     return soup

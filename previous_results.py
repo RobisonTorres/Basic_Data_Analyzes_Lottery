@@ -2,6 +2,7 @@ import web_scraper
 print('Gathering Previous Results.')
 print()
 
+# Not working anymore because they've changed the site's structure.
 def gathering_data():
 
     # This function retrieves twenty previous results from the lottery, 
