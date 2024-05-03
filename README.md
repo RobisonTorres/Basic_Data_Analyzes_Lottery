@@ -2,7 +2,7 @@
 
 ## Intro
 
-The goal of this project is to analyze and get some insights from Lotofácil lottery's previous results. 
+The goal of this project is to analyze and get some insights from lottery's previous results called 'Lotofácil' a brazilian lottery game.
 
 ## Features 
 
