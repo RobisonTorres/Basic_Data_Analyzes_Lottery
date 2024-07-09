@@ -1,10 +1,10 @@
-import open_save
+import open_file
 import random
 
 def sample_data():
 
     # This function determines the sample's size.
-    total_rounds = len(open_save.open_file().values())
+    total_rounds = len(open_file.open_file().values())
     rounds = input(f'Please choose a sample between 1 and {total_rounds} '\
                    f'or press enter to check all of them: ')
     return total_rounds if rounds == '' else int(rounds)
@@ -12,7 +12,7 @@ def sample_data():
 def organize_data(sample):
      
     # This function organizes the data.
-    lottery_results = open_save.open_file().values()
+    lottery_results = open_file.open_file().values()
     results = ''.join(lottery_results).replace('-', '') 
     numbers = [int(results[x: x+2]) for x in range(0, len(results), 2)][-sample * 15:]
     return numbers
@@ -20,7 +20,7 @@ def organize_data(sample):
 def check_duplicate(sample):
 
     # This function checks the data for repeated results.
-    lottery_results = open_save.open_file()
+    lottery_results = open_file.open_file()
     values = list(lottery_results.values())[-sample:]
     count = [v for v in values if values.count(v) >= 2]
     repeat_keys = [k for k in lottery_results.keys() if lottery_results[k] in count]
@@ -101,9 +101,9 @@ def repetition(data):
 
         # Games that repeated at least 9 numbers from previous result.
         repeated = sum(list(fre_result.values())[3:])   
-        return f'Out of {len(grouped_results) - 1} games analyzed, '\
+        return f'Out of {len(grouped_results) - 1} games, in '\
                f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
-            f'of them repeated at least 9 numbers from the previous result.\n'             
+               f'of cases a new result had at least 9 numbers the same as the prior.\n'             
 
 def simulate_games():
 
