@@ -1,4 +1,4 @@
-# Data Analysis: Lotofácil Lottery
+# Basic Data Analysis: Lotofácil Lottery
 
 ## Intro
 
