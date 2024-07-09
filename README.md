@@ -39,6 +39,7 @@ To use this repository, follow these steps:
 ## Example
 
 After running the analyzing.py on all previous results you should get this outcome:
+
 ```
 Each lottery's result is unique in this dataset.
 
@@ -48,11 +49,10 @@ Range of numbers most drawn - ['11-15']. Range of numbers least drawn - ['16-20'
 Game with more numbers in sequence: 3-5-12-13-14-15-16-17-18-19-20-21-22-23-25
 Game with less numbers in sequence: 1-2-4-7-8-10-12-13-15-17-19-20-22-24-25
 
-Out of 460 games, in 64.13% of cases a new result had at least 9 numbers the same as the prior.        
+Out of 460 games, in 64.13% of cases a new result had at least 9 numbers the same as the prior result.        
 
 Simulating Games.
 
 By simulating 100,000 games, the occurrence of each score required to win prizes is:
-{'11 pts': 8689, '12 pts': 1695, '13 pts': 149, '14 pts': 7, '15 pts': 0}. It indicates
-that the player has approximately 8% of chance to win at least the lowest prize per game.
+{'11 pts': 8689, '12 pts': 1695, '13 pts': 149, '14 pts': 7, '15 pts': 0}. 
 ```
