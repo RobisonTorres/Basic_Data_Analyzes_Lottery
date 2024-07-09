@@ -6,7 +6,7 @@ The goal of this project is to analyze and gain some insights from the results o
 
 In this game, players choose 15 numbers between 1 and 25. They win the lowest prize if they score at least 11 points and win the highest prize if they score 15 points.
 
-## Be advised:
+## Be advised
 
 Lottery outcomes are typically designed to be random, and past results may not predict future outcomes. Therefore, such analysis serves as informational rather than predictive. Also, the current result of this analysis will change if more valid data are added or removed from the file results.json.
 
@@ -66,7 +66,7 @@ Game with less numbers in sequence: 1-2-4-7-8-10-12-13-15-17-19-20-22-24-25
 Out of 460 games, in 64.13% of cases a new result had at least 9 numbers the same as the prior result.        
 ```
 
-## Simulating Games.
+## Simulating Games
 
 ```
 By simulating 100,000 games, the occurrence of each score required to win prizes is:
