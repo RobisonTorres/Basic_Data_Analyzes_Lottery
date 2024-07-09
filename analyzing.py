@@ -113,7 +113,7 @@ def repetition(data):
         repeated = sum(list(fre_result.values())[3:])   
         return f'Out of {len(grouped_results) - 1} games, in '\
                f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
-               f'of cases a new result had at least 9 numbers the same as the prior.\n'             
+               f'of cases a new result had at least 9 numbers the same as the prior result.\n'             
 
 def simulate_games():
 
@@ -133,11 +133,9 @@ def simulate_games():
     for num in range(11, 16):
         score_prizes[str(num) + ' pts'] = score.count(num)
     
-    chance_winning = int((list(score_prizes.values())[0] / 100_000) * 100)
     return (f"By simulating 100,000 games, "
         f"the occurrence of each score required to win prizes is:\n"
-        f"{score_prizes}. It indicates\nthat the player has approximately "
-        f"{chance_winning}% of chance to win at least the lowest prize per game.\n")
+        f"{score_prizes}.")
 
 def main():
 
