@@ -117,10 +117,10 @@ def repetition(data):
 
 def simulate_games():
 
-    # This function simulates 100,000 games and calculate scores. 
+    # This function simulates 326,876 games and calculate scores. 
     # Each game is a selection of 15 numbers between 1 and 25.
     random_games = []
-    for x in range(0, 100_000):  
+    for x in range(0, 326_876):  
         random_games.append(random.sample(range(1, 26), 15))
   
     score = []
@@ -133,7 +133,7 @@ def simulate_games():
     for num in range(11, 16):
         score_prizes[str(num) + ' pts'] = score.count(num)
     
-    return (f"By simulating 100,000 games, "
+    return (f"By simulating 326,876 games, "
         f"the occurrence of each score required to win prizes is:\n"
         f"{score_prizes}.")
 
